@@ -1,0 +1,12 @@
+{
+	"name": "header-replacer",
+	"version": "0.0.1",
+	"description": "Plugin for url-replace. It allows doing replaces in headers.",
+	"main": "replace-header.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": "https://github.com/zboro/cookie-replacer.git",
+	"author": "zboron.lukas@gmail.com",
+	"license": "ISC"
+}
