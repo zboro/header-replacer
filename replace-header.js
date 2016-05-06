@@ -7,9 +7,10 @@ module.exports = function(config, req, res) {
 			}
 			var oldwriteHead = res.writeHead;
 			res.writeHead = function() {
-				var header = this.getHeader(replace.header);
-				header = header ? header[0] : "";
-				this.setHeader(replace.header, header.replace(new RegExp(replace.pattern), replace.replacement));
+				var headers = this.getHeader(replace.header);
+				this.setHeader(replace.header, (headers || []).map(function(header) {
+					return header.replace(new RegExp(replace.pattern), replace.replacement);
+				}));
 				oldwriteHead.apply(this, arguments);
 			};
 
