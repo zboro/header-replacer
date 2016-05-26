@@ -8,6 +8,11 @@ module.exports = function(config, req, res) {
 			var oldwriteHead = res.writeHead;
 			res.writeHead = function() {
 				var headers = this.getHeader(replace.header);
+				if (typeof headers == "string") {
+					headers = [
+						headers
+					];
+				}
 				this.setHeader(replace.header, (headers || []).map(function(header) {
 					return header.replace(new RegExp(replace.pattern), replace.replacement);
 				}));
