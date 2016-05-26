@@ -1,6 +1,6 @@
 {
   "name": "header-replacer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Plugin for url-replace. It allows doing replaces in headers.",
   "main": "replace-header.js",
   "scripts": {
